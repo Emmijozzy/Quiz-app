@@ -219,11 +219,10 @@ td {
 }
 
 /* Help */
-
 .help--board {
     background-color: #d3d1ddb3;
     padding: 1rem;
-    text-justify: inter-cluster;
+    text-justify:inter-cluster;
 }
 
 .help--board h2 {
