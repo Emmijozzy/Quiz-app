@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    margin: 0;
+    background-color: #485254;
+    padding: 20px;
+    font-family: 'Karla', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.inner--body {
+    background-color: #dde2d5dc;
+    height: 400px;
+    width: 800px;
+    max-width: 800px;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("./img/pexels-skitterphoto-705171.jpg");
+    background-size: cover;
+    background-position: 2px -60px;
+    background-repeat: no-repeat;
+    /* border: 1px solid ; */
+    box-shadow: 2px 4px 20px 3px #d3d1ddb3;
+    position: relative;
+}
+
+.game--nav {
+    width: 450px;
+    height: 450px;
+    background-color: #edecf361;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: "Inter";
+}
+
+.link {
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #1c3234;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.link:hover, .link:active{
+    color: #7d8282;
+}
+
+.game--body {
+    background-image: url(./img/pexels-skitterphoto-33968.jpg);
+}
+
+.game--board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #d3d1ddb3;
+    border-radius: 10px;
+    position: relative;
+    padding: 3px 10px;
+}
+
+.game--watch {
+    background-color: rgba(36, 53, 2, 0.4);
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    padding: 1px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.back {
+    position: absolute;
+    right: -1;
+    top: -1;
+    font-size: 40px;
+    margin: 5px 20px;
+    text-decoration: none;
+    color: #f50e0ed2;
+}
+
+
+
+.reset {
+    position: absolute;
+    left: -1;
+    top: -1;
+    font-size: 35px;
+    margin: 8px 10px;
+    text-decoration: none;
+    color: #222;
+    border: none;
+    background: transparent;
+}
+
+.time {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.title {
+    font-size: 40px;
+    margin: 0;
+}
+
+.instructions {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    margin-top: 0;
+    text-align: center;
+}
+
+.dice-container {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.die-face {
+    height: 50px;
+    width: 50px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.die-num {
+    font-size: 2rem;
+}
+
+.roll-dice {
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1e08af;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Karla', sans-serif;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.roll-dice:focus {
+    outline: none;
+}
+
+.roll-dice:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+
+
+.hightlight--board {
+    background-color: #d3d1ddb3;
+    height: 300px;
+    width: 500px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.highlight--head {
+    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+table {
+    justify-self: flex-start;
+    width: 80%;
+    height: 50%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+
+tr {
+    background-color: #fff;
+    width: 60pc;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    height: 1rem;
+}
+
+td {
+    width: 3rem;
+}
+
+/* Help */
+
+.help--board {
+    background-color: #d3d1ddb3;
+    padding: 1rem;
+    text-justify: inter-cluster;
+}
+
+.help--board h2 {
+    text-align: center;
+    text-decoration: underline;
+}
