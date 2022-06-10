@@ -2,9 +2,22 @@ import React from "react"
 import Quiz from "./components/Quiz";
 import Option from "./components/Option";
 import useStore from "./store";
+import useMediaQuery from 'react-use-media-query-hook'
 import "./style.scss"
-// import style from './style.css'
+import style from './style.css'
+import Styled from 'styled-components';
 
+
+const quizPage = Styled.div`
+    height: 95vh;
+    z-index: 22222;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 767px) {
+      width: 80%
+    }
+`
 export default function App() {
   const [start, setStart] = React.useState(false);
   const [finishQuiz, setFinishQuiz] = React.useState(false);
@@ -22,6 +35,12 @@ export default function App() {
   const numCorrect = useStore(state => state.numCorrect)
   const restartQuiz = useStore(state => state.restartQuiz)
   const restartScoreAndAnswer = useStore(state => state.restartScoreAndAnswer)
+
+  const isMobile = useMediaQuery('(max-width: 400px)');
+  const isTablet = useMediaQuery('(min-width: 350px) and (max-width: 640px)');
+  const isDesktop = useMediaQuery('(min-width: 641px)');
+  const isLargeDesktop = useMediaQuery('(min-width: 1025px)');
+
   
   
   //Call of fetch data on start of the quiz
@@ -103,18 +122,28 @@ export default function App() {
     <main>
       <div className="top--blob"></div>
       <div className="bottom--blob"></div>
+
       { !start &&
         <div className="home">
-            <div className="action--board">
-              <h1>Quizzical</h1>
+            {isTablet && <div className="mb-action--board">
+              <h1> Quizzical</h1>
               <p>Some description if needed</p>
               <button
                 onClick={startQuiz}
               >Start quiz</button>
-            </div>
+            </div>}
+
+            {isDesktop && <div className="action--board">
+              <h1>mb Quizzical</h1>
+              <p>Some description if needed</p>
+              <button
+                onClick={startQuiz}
+              >Start quiz</button>
+            </div>}
         </div>
       }
-      { <div className="quiz--page">
+
+      { isTablet && <div className="quiz--page">
         {!isLoading && start && ansCountElement}
         {start && quizElement}
 
@@ -123,6 +152,17 @@ export default function App() {
         {!isLoading && start && numberAnswered === 5 && checkAnswerButton}
         </div>
       </div>}
+
+      { isDesktop && <div className="quiz--page">
+        {!isLoading && start && ansCountElement}
+        {start && quizElement}
+
+        <div className="quiz-action">
+        {showScore &&  scoreElement}
+        {!isLoading && start && numberAnswered === 5 && checkAnswerButton}
+        </div>
+      </div>}
+
     </main>
   )
 }
