@@ -130,12 +130,13 @@ main {
 .quiz--page {
   position: absolute;
   height: 95vh;
-  width: 90vw;
+  width: 80vw;
   z-index: 22222;
   display: flex;
   flex-direction: column;
   top: 2%;
   font-size: 30px;
+  overflow-y:auto;
 }
 
 .quiz--board {
@@ -145,13 +146,14 @@ main {
   align-items: flex-start;
   justify-content: start;
   gap: 10px;
-  padding:5px 0px
+  padding:5px 0px;
+  font-size: 25px;
 }
 
 .question {
   font-family: 'Karla', sans-serif;
   color: #293264;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 11px;
 }
@@ -168,7 +170,7 @@ main {
   border: 2px solid #4D5B9E;
   outline: none;
   font-family: 'Inter', sans-serif;  
-  font-size: 31.24px;
+  font-size: 25.24px;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -227,13 +229,14 @@ main {
 @media screen and (min-width: 1024px) {
   .quiz--board {
     /* height: 100vh; */
-    font-size: 20px;
+    font-size: 16px;
+    width: 80%;
   }
 
   .option {
     border: 1px solid #4D5B9E;
     font-family: 'Inter', sans-serif;  
-    font-size: 21.24px;
+    font-size: 18.24px;
     font-weight: bold;
     display: flex;
     align-items: center;
