@@ -25,6 +25,10 @@ export default function Option (props) {
         backgroundColor: "#cb9d85",
         border: "1px solid #cb9d85"
     } : selectedStyle
+    selectedStyle = showAnswer ? {
+        backgroundColor: "#a3adc6",
+        border: "1px solid #a3adc6"
+    } : selectedStyle
     return(
         <span 
             className="option"
