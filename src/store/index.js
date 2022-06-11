@@ -6,7 +6,7 @@ import  {devtools} from  'zustand/middleware'
 const useStore = create((set) => ({
     quiz : [],
     fetchQuiz: async () => {
-        const fetchRes =  await axios.get('https://opentdb.com/api.php?amount=5&category=21&difficulty=easy&type=multiple').then(res => res.data)
+        const fetchRes =  await axios.get('https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple').then(res => res.data)
 
         const sortQuiz = await sortQuizData(fetchRes.results)
         console.log(sortQuiz)
